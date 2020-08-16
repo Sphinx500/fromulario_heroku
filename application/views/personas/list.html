@@ -1,0 +1,70 @@
+$def with(result)
+<!DOCTYPE html>
+<html>
+  <header>
+    <h1 class="text-light bg-dark">LISTA DE ALUMNOS</h1>
+  </header>
+  <body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">INICIO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/insert">Insertar alumno <span class="sr-only"></span></a>
+      </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/list">Lista de alumnos<span class="sr-only"></span></a>
+      </li>
+   
+    
+    
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Matricula</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Primer apellido</th>
+      <th scope="col">Segundo apellido</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Fecha de nacimiento</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+  $for row  in result:
+      <tr>
+        <td><a href="/view/$row['matricula']">$row['matricula']</a></td>
+        <td>$row['nombre']</td>
+        <td>$row['pri_ap']</td>
+        <td>$row['seg_ap']</td>
+        <td>$row['age']</td>
+        <td>$row['fdate']</td>
+        <td>$row['gender']</td>
+        <td>$row['state']</td>
+        <td>
+          <a href="/update/$row['matricula']"><button type="button" class="btn">Update</button></a>
+        </td>
+        <td>
+          <a href="/delete/$row['matricula']">
+          <button type="button" class="btn">Delete</button></a>
+        </td>
+      </tr>
+</table>
+<body background="https://image.freepik.com/vector-gratis/diseno-patron-mandala-sobre-fondo-blanco_1308-33479.jpg"> 
+</body>
+</html>
